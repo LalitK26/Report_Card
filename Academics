@@ -1,0 +1,222 @@
+import java.util.*;
+class Academics
+{
+    int std;
+    int n;
+    char sec;
+    String teacher;
+    String academicyr;
+    String info[][];
+    float term1[][];
+    float term2[][];
+    Scanner sc=new Scanner(System.in);
+    
+    public void input()
+    {
+        System.out.println("Enter Number Of Students:");
+        this.n=sc.nextInt();
+        sc.nextLine();
+        
+        this.info=new String[n][3];
+        for(int i=0;i<this.info.length;i++)
+        {
+            System.out.println("Enter Roll Number:");
+            this.info[i][0]=sc.nextLine();
+            System.out.println("Enter Student Name:");
+            this.info[i][1]=sc.nextLine();
+            System.out.println("Enter Computer Code:");
+            this.info[i][2]=sc.nextLine();
+        }
+        System.out.println("Enter Standard:");
+        this.std=sc.nextInt();
+        sc.nextLine();
+        System.out.println("Enter Section:");
+        this.sec=sc.nextLine().charAt(0);
+        System.out.println("Enter Class Teacher Name:");
+        this.teacher=sc.nextLine();
+        System.out.println("Enter Academic Year :");
+        this.academicyr=sc.nextLine();
+    }
+        void showinfo()
+        {
+        System.out.println("Roll Number"+"\t"+"Student Name"+"\t"+" Computer Code");
+        for(int i=0;i<this.info.length;i++){
+        for(int j=0;j<this.info[0].length;j++)
+        {
+            System.out.print(this.info[i][j]+"\t\t");
+        }
+        System.out.println();
+    }
+        }
+        
+    void termone()
+    {
+        term1=new float[this.n][16];
+        for(int i=0;i<this.term1.length;i++)
+        {
+            System.out.println("Enter marks of Term 1 for "+this.info[i][1]);
+            System.out.println("Enter marks for Eng.Language:");
+            this.term1[i][0]=sc.nextInt();
+            sc.nextLine();
+            
+            System.out.println("Enter marks for Eng.Literature:");
+            this.term1[i][1]=sc.nextInt();
+            sc.nextLine();
+            
+            this.term1[i][2]=((this.term1[i][0]+this.term1[i][1])/2);
+            float english=this.term1[i][2];
+            
+            System.out.println("Enter marks for Hindi:");
+            this.term1[i][3]=sc.nextInt();
+            float hindi=this.term1[i][3];
+            sc.nextLine();
+            
+            System.out.println("Enter marks for Mathematics:");
+            this.term1[i][4]=sc.nextInt();
+            float maths=this.term1[i][4];
+            sc.nextLine();
+            
+            System.out.println("Enter marks for History");
+            this.term1[i][5]=sc.nextInt();
+            float history=term1[i][5];
+            sc.nextLine();
+            
+            System.out.println("Enter marks for Geography:");
+            this.term1[i][6]=sc.nextInt();
+            float geo=term1[i][6];
+            sc.nextLine();
+            
+            this.term1[i][7]=((this.term1[i][5]+this.term1[i][6])/2);
+            float sst=this.term1[i][7];
+            
+            System.out.println("Enter marks for Physics");
+            this.term1[i][8]=sc.nextInt();
+            float physics=this.term1[i][8];
+            sc.nextLine();
+            
+            System.out.println("Enter marks for Biology:");
+            this.term1[i][9]=sc.nextInt();
+            float biology=this.term1[i][9];
+            sc.nextLine();
+            
+            System.out.println("Enter marks for Chemistry:");
+            this.term1[i][10]=sc.nextInt();
+            float chemistry=this.term1[i][10];
+            sc.nextLine();
+            
+            this.term1[i][11]=((this.term1[i][8]+this.term1[i][9]+this.term1[i][10])/3);
+            float science=this.term1[i][11];
+            
+            System.out.println("Enter marks for Computer/P.Ed:");
+            this.term1[i][12]=sc.nextInt();
+            float computer=this.term1[i][12];
+            sc.nextLine();
+            
+            float total=english+hindi+maths+science+sst+computer;
+            this.term1[i][13]=total;
+            
+            float percentage=((this.term1[i][13])/6);
+            this.term1[i][14]=percentage;
+            
+            this.term1[i][15]=1;
+            
+            
+        }
+    }
+    void showmarks()
+    {
+        for(int i=0;i<this.term1.length;i++)
+        {
+            for(int j=0;j<this.term1[0].length;j++)
+            {
+                System.out.print(this.term1[i][j]+"\t\t");
+            }
+            System.out.println();
+        }
+    }
+    void termtwo()
+    {
+         term2=new float[this.n][16];
+        for(int i=0;i<this.term2.length;i++)
+        {
+            System.out.println("Enter marks of Term 2 for "+this.info[i][1]);
+            System.out.println("Enter marks for Eng.Language:");
+            this.term2[i][0]=sc.nextInt();
+            sc.nextLine();
+            
+            System.out.println("Enter marks for Eng.Literature:");
+            this.term2[i][1]=sc.nextInt();
+            sc.nextLine();
+            
+            this.term2[i][2]=((this.term1[i][0]+this.term1[i][1])/2);
+            float english=this.term1[i][2];
+            
+            System.out.println("Enter marks for Hindi:");
+            this.term2[i][3]=sc.nextInt();
+            float hindi=this.term1[i][3];
+            sc.nextLine();
+            
+            System.out.println("Enter marks for Mathematics:");
+            this.term2[i][4]=sc.nextInt();
+            float maths=this.term1[i][4];
+            sc.nextLine();
+            
+            System.out.println("Enter marks for History");
+            this.term2[i][5]=sc.nextInt();
+            float history=term1[i][5];
+            sc.nextLine();
+            
+            System.out.println("Enter marks for Geography:");
+            this.term2[i][6]=sc.nextInt();
+            float geo=term1[i][6];
+            sc.nextLine();
+            
+            this.term2[i][7]=((this.term1[i][5]+this.term1[i][6])/2);
+            float sst=this.term1[i][7];
+            
+            System.out.println("Enter marks for Physics");
+            this.term2[i][8]=sc.nextInt();
+            float physics=this.term1[i][8];
+            sc.nextLine();
+            
+            System.out.println("Enter marks for Biology:");
+            this.term2[i][9]=sc.nextInt();
+            float biology=this.term1[i][9];
+            sc.nextLine();
+            
+            System.out.println("Enter marks for Chemistry:");
+            this.term2[i][10]=sc.nextInt();
+            float chemistry=this.term1[i][10];
+            sc.nextLine();
+            
+            this.term2[i][11]=((this.term2[i][8]+this.term2[i][9]+this.term2[i][10])/3);
+            float science=this.term2[i][11];
+            
+            System.out.println("Enter marks for Computer/P.Ed:");
+            this.term2[i][12]=sc.nextInt();
+            float computer=this.term1[i][12];
+            sc.nextLine();
+            
+            float total=english+hindi+maths+science+sst+computer;
+            this.term2[i][13]=total;
+            
+            float percentage=((this.term1[i][13])/6);
+            this.term2[i][14]=percentage;
+            
+            this.term2[i][15]=1;
+            
+            
+        }
+    }
+    void showmarks2()
+    {
+        for(int i=0;i<this.term2.length;i++)
+        {
+            for(int j=0;j<this.term2[0].length;j++)
+            {
+                System.out.print(this.term2[i][j]+"\t\t");
+            }
+            System.out.println();
+        }
+    }
+}
